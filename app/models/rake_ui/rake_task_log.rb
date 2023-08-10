@@ -20,7 +20,6 @@ module RakeUi
 
     def self.build_from_file(log_file_name)
       log_file_name.split(FILE_DELIMITER)
-
       new(
         id: log_file_name.gsub(".txt", ""),
         log_file_name: log_file_name,
@@ -85,35 +84,35 @@ module RakeUi
     end
 
     def name
-      super || parsed_log_file_name[:name] || parsed_file_contents[:name]
+      self[:name] || parsed_log_file_name[:name] || parsed_file_contents[:name]
     end
 
     def date
-      super || parsed_log_file_name[:date] || parsed_file_contents[:date]
+      self[:date] || parsed_log_file_name[:date] || parsed_file_contents[:date]
     end
 
     def args
-      super || parsed_file_contents[:args]
+      self[:args] || parsed_file_contents[:args]
     end
 
     def environment
-      super || parsed_file_contents[:environment]
+      self[:environment] || parsed_file_contents[:environment]
     end
 
     def rake_command
-      super || parsed_file_contents[:rake_command]
+      self[:rake_command] || parsed_file_contents[:rake_command]
     end
 
     def rake_definition_file
-      super || parsed_file_contents[:rake_definition_file]
+      self[:rake_definition_file] || parsed_file_contents[:rake_definition_file]
     end
 
     def log_file_name
-      super || parsed_file_contents[:log_file_name]
+      self[:log_file_name] || parsed_file_contents[:log_file_name]
     end
 
     def log_file_full_path
-      super || parsed_file_contents[:log_file_full_path]
+      self[:log_file_full_path] || parsed_file_contents[:log_file_full_path]
     end
 
     def rake_command_with_logging

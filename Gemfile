@@ -9,4 +9,5 @@ group :development do
 end
 
 gem "pry", group: [:development, :test], require: false
-gem "rails", "~> 6.1.7.4", group: [:development, :test], require: false
+gem "rails", "~> 7.0.4", group: [:development, :test], require: false
+gem "sprockets-rails"
